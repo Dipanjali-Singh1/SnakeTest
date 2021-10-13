@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>KeyboardListenerTest.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">snakegame$WindowTest.exec</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">KeyboardListenerTest.java</span></div><h1>KeyboardListenerTest.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+import java.awt.event.KeyEvent;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+/**
+ *
+ * @author Dipanjali
+ */
+public class KeyboardListenerTest {
+
+<span class="nc" id="L19">    public KeyboardListenerTest() {</span>
+<span class="nc" id="L20">    }</span>
+
+    @BeforeClass
+    public static void setUpClass() {
+<span class="nc" id="L24">    }</span>
+
+    @AfterClass
+    public static void tearDownClass() {
+<span class="nc" id="L28">    }</span>
+
+    public int keyPressed(KeyEvent e) throws NullPointerException{
+<span class="nc bnc" id="L31" title="All 5 branches missed.">        switch(e.getKeyCode()){</span>
+            case 39:
+<span class="nc bnc" id="L33" title="All 2 branches missed.">                if(ThreadsController.directionSnake!=2)</span>
+<span class="nc" id="L34">                    ThreadsController.directionSnake=1;</span>
+                break;
+            case 38:
+<span class="nc bnc" id="L37" title="All 2 branches missed.">                if(ThreadsController.directionSnake!=4)</span>
+<span class="nc" id="L38">                    ThreadsController.directionSnake=3;</span>
+                break;
+
+            case 37:
+<span class="nc bnc" id="L42" title="All 2 branches missed.">                if(ThreadsController.directionSnake!=1)</span>
+<span class="nc" id="L43">                    ThreadsController.directionSnake=2;</span>
+                break;
+
+            case 40:
+<span class="nc bnc" id="L47" title="All 2 branches missed.">                if(ThreadsController.directionSnake!=3)</span>
+<span class="nc" id="L48">                    ThreadsController.directionSnake=4;</span>
+                break;
+
+            default: break;
+        }
+<span class="nc" id="L53">        return ThreadsController.directionSnake;</span>
+    }
+
+    /**
+     * Test of keyPressed method, of class KeyboardListener.
+     */
+
+    @Test
+    public void KeyboardListener(){
+<span class="nc" id="L62">        System.out.println(&quot;KeyboardListener&quot;);</span>
+<span class="nc" id="L63">    }</span>
+
+    @Test
+    public void testKeyPressed() {
+<span class="nc" id="L67">        System.out.println(&quot;keyPressed&quot;);</span>
+<span class="nc" id="L68">        KeyEvent e = null;</span>
+
+<span class="nc" id="L70">        e.setKeyCode(KeyEvent.VK_UP);</span>
+<span class="nc" id="L71">        assertEquals(keyPressed(e), ThreadsController.directionSnake);</span>
+
+<span class="nc" id="L73">        e.setKeyCode(KeyEvent.VK_DOWN);</span>
+<span class="nc" id="L74">        assertEquals(keyPressed(e), ThreadsController.directionSnake);</span>
+
+<span class="nc" id="L76">        e.setKeyCode(KeyEvent.VK_RIGHT);</span>
+<span class="nc" id="L77">        assertEquals(keyPressed(e), ThreadsController.directionSnake);</span>
+
+<span class="nc" id="L79">        e.setKeyCode(KeyEvent.VK_LEFT);</span>
+<span class="nc" id="L80">        assertEquals(keyPressed(e), ThreadsController.directionSnake);</span>
+<span class="nc" id="L81">    }</span>
+
+    public void test()
+    {
+<span class="nc" id="L85">        System.out.println(&quot;Keys pressed tested!&quot;);</span>
+<span class="nc" id="L86">    }</span>
+
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
